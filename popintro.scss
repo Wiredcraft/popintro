@@ -158,6 +158,7 @@ $blue: #0074D9;
       font-family: inherit;
       font-size: inherit;
       line-height: inherit;
+      outline: none;
     }
     input[type=text],
     input[type=email] {
@@ -176,7 +177,6 @@ $blue: #0074D9;
       color: #FFF;
       cursor: pointer;
       font-size: 12px;
-      outline: none;
       padding: 1px 8px;
       position: absolute;
       right: 2px;
