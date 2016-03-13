@@ -1,6 +1,6 @@
-const POPINTRO_URL = 'https://wiredcraft.com/popintro';
+var POPINTRO_URL = 'https://wiredcraft.com/popintro';
 
-const POPINTRO_HTML = '';
+var POPINTRO_HTML = '';
       POPINTRO_HTML += '  <div id="popintro-wrapper">';
       POPINTRO_HTML += '    <video id="popintro-video" autoplay muted loop="true">';
       POPINTRO_HTML += '      <source src="'+ POPINTRO_VIDEO +'" type="video/mp4"/>';
