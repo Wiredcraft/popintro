@@ -152,6 +152,13 @@ $blue: #0074D9;
       color: #FFF;
       font-size: 12px;
     }
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
     input[type=text],
     input[type=email] {
       background: #FFF;
