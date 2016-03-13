@@ -1,46 +1,50 @@
-var popintroHTML = '';
-popintroHTML += '  <div id="popintro-wrapper">';
-popintroHTML += '    <video id="popintro-video" autoplay muted loop="true">';
-popintroHTML += '      <source src="/popintro/hello.m4v" type="video/mp4"/>';
-popintroHTML += '    </video>';
-popintroHTML += '    <div id="popintro-mask">';
-popintroHTML += '      <div id="popintro-message"><img src="/popintro/sound-off.svg"><span>Click to unmute</span></div>';
-popintroHTML += '    </div>';
-popintroHTML += '    <div id="popintro-close"><img src="/popintro/close.svg"></div>';
-popintroHTML += '    <div id="popintro-action">';
-popintroHTML += popintroAction;
-popintroHTML += '    </div>';
-popintroHTML += '  </div>';
+const POPINTRO_URL = 'https://wiredcraft.com/popintro';
 
+const POPINTRO_HTML = '';
+      POPINTRO_HTML += '  <div id="popintro-wrapper">';
+      POPINTRO_HTML += '    <video id="popintro-video" autoplay muted loop="true">';
+      POPINTRO_HTML += '      <source src="'+ POPINTRO_VIDEO +'" type="video/mp4"/>';
+      POPINTRO_HTML += '    </video>';
+      POPINTRO_HTML += '    <div id="popintro-mask">';
+      POPINTRO_HTML += '      <div id="popintro-message"><img src="'+ POPINTRO_URL +'/popintro/sound-off.svg"><span>Click to unmute</span></div>';
+      POPINTRO_HTML += '    </div>';
+      POPINTRO_HTML += '    <div id="popintro-close"><img src="'+ POPINTRO_URL +'/popintro/close.svg"></div>';
+      POPINTRO_HTML += '    <div id="popintro-action">';
+      POPINTRO_HTML += POPINTRO_ACTION;
+      POPINTRO_HTML += '    </div>';
+      POPINTRO_HTML += '  </div>';
+
+// Inject the container
 var popintro = {};
-
 popintro.container = document.createElement('div');
 popintro.container.setAttribute('id', 'popintro-container');
 document.body.appendChild(popintro.container);
 popintro.container.innerHTML = popintroHTML;
 
+// Intialize
 popintro.video = document.getElementById('popintro-video');
 popintro.mask = document.getElementById('popintro-mask');
 popintro.message = document.getElementById('popintro-message');
 popintro.close = document.getElementById('popintro-close');
 popintro.status = 'default';
 
+//
 popintro.setStatus = function (status) {
   popintro.status = status;
   popintro.container.className = 'popintro-status-'+ status;
   switch(popintro.status) {
     case 'default':
     case 'muted':
-      popintro.message.innerHTML = '<img src="/popintro/sound-off.svg"><span>Click to unmute</span>';
+      popintro.message.innerHTML = '<img src="'+ POPINTRO_URL +'/popintro/sound-off.svg"><span>Click to unmute</span>';
       break;
     case 'stopped':
-      popintro.message.innerHTML = '<img src="/popintro/replay.svg"><span>Click to replay</span>';
+      popintro.message.innerHTML = '<img src="'+ POPINTRO_URL +'/popintro/replay.svg"><span>Click to replay</span>';
       break;
     case 'closed':
-      popintro.message.innerHTML = '<img src="/popintro/play.svg">';
+      popintro.message.innerHTML = '<img src="'+ POPINTRO_URL +'/popintro/play.svg">';
       break;
     default:
-      popintro.message.innerHTML = '<img src="/popintro/sound-on.svg">';
+      popintro.message.innerHTML = '<img src="'+ POPINTRO_URL +'/popintro/sound-on.svg">';
       break;
   }
 };
