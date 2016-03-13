@@ -1,5 +1,7 @@
+// URL to load assets
 var POPINTRO_URL = 'https://wiredcraft.com/popintro';
 
+// Widget template
 var POPINTRO_HTML = '';
     POPINTRO_HTML += '  <div id="popintro-wrapper">';
     POPINTRO_HTML += '    <video id="popintro-video" autoplay muted loop="true">';
@@ -28,7 +30,7 @@ popintro.message = document.getElementById('popintro-message');
 popintro.close = document.getElementById('popintro-close');
 popintro.status = 'default';
 
-//
+// Track status of the widget
 popintro.setStatus = function (status) {
   popintro.status = status;
   popintro.container.className = 'popintro-status-'+ status;
@@ -49,11 +51,13 @@ popintro.setStatus = function (status) {
   }
 };
 
+// Close button
 popintro.close.onclick = function (e) {
   popintro.video.pause();
   popintro.setStatus('closed');
 };
 
+// Play/Mute/Replay
 popintro.mask.onclick = function (e) {
   switch(popintro.status) {
     case 'playing':
@@ -69,6 +73,7 @@ popintro.mask.onclick = function (e) {
   }
 };
 
+// Track when video ends with sound
 popintro.video.addEventListener(
   'ended',
   function myHandler(e) {
