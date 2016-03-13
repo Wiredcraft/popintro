@@ -1,18 +1,18 @@
-const POPINTRO_URL = 'https://wiredcraft.com/popintro';
+var POPINTRO_URL = 'https://wiredcraft.com/popintro';
 
-const POPINTRO_HTML = '';
-      POPINTRO_HTML += '  <div id="popintro-wrapper">';
-      POPINTRO_HTML += '    <video id="popintro-video" autoplay muted loop="true">';
-      POPINTRO_HTML += '      <source src="'+ POPINTRO_VIDEO +'" type="video/mp4"/>';
-      POPINTRO_HTML += '    </video>';
-      POPINTRO_HTML += '    <div id="popintro-mask">';
-      POPINTRO_HTML += '      <div id="popintro-message"><img src="'+ POPINTRO_URL +'/popintro/sound-off.svg"><span>Click to unmute</span></div>';
-      POPINTRO_HTML += '    </div>';
-      POPINTRO_HTML += '    <div id="popintro-close"><img src="'+ POPINTRO_URL +'/popintro/close.svg"></div>';
-      POPINTRO_HTML += '    <div id="popintro-action">';
-      POPINTRO_HTML += POPINTRO_ACTION;
-      POPINTRO_HTML += '    </div>';
-      POPINTRO_HTML += '  </div>';
+var POPINTRO_HTML = '';
+    POPINTRO_HTML += '  <div id="popintro-wrapper">';
+    POPINTRO_HTML += '    <video id="popintro-video" autoplay muted loop="true">';
+    POPINTRO_HTML += '      <source src="'+ POPINTRO_VIDEO +'" type="video/mp4"/>';
+    POPINTRO_HTML += '    </video>';
+    POPINTRO_HTML += '    <div id="popintro-mask">';
+    POPINTRO_HTML += '      <div id="popintro-message"><img src="'+ POPINTRO_URL +'/popintro/sound-off.svg"><span>Click to unmute</span></div>';
+    POPINTRO_HTML += '    </div>';
+    POPINTRO_HTML += '    <div id="popintro-close"><img src="'+ POPINTRO_URL +'/popintro/close.svg"></div>';
+    POPINTRO_HTML += '    <div id="popintro-action">';
+    POPINTRO_HTML += POPINTRO_ACTION;
+    POPINTRO_HTML += '    </div>';
+    POPINTRO_HTML += '  </div>';
 
 // Inject the container
 var popintro = {};
