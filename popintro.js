@@ -49,30 +49,30 @@ popintro.setStatus = function (status) {
   }
 };
 
-popintro.close.onclick = function (e) {
-  popintro.video.pause();
-  popintro.setStatus('closed');
-};
+// popintro.close.onclick = function (e) {
+//   popintro.video.pause();
+//   popintro.setStatus('closed');
+// };
 
-popintro.mask.onclick = function (e) {
-  switch(popintro.status) {
-    case 'playing':
-      popintro.video.muted = true;
-      popintro.setStatus('muted');
-      break;
-    default:
-      popintro.video.load();
-      popintro.video.muted = false;
-      popintro.video.loop = false;
-      popintro.setStatus('playing');
-      break;
-  }
-};
+// popintro.mask.onclick = function (e) {
+//   switch(popintro.status) {
+//     case 'playing':
+//       popintro.video.muted = true;
+//       popintro.setStatus('muted');
+//       break;
+//     default:
+//       popintro.video.load();
+//       popintro.video.muted = false;
+//       popintro.video.loop = false;
+//       popintro.setStatus('playing');
+//       break;
+//   }
+// };
 
-popintro.video.addEventListener(
-  'ended',
-  function myHandler(e) {
-    popintro.setStatus('stopped');
-  },
-  false
-);
+// popintro.video.addEventListener(
+//   'ended',
+//   function myHandler(e) {
+//     popintro.setStatus('stopped');
+//   },
+//   false
+// );
