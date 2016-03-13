@@ -19,7 +19,7 @@ var popintro = {};
 popintro.container = document.createElement('div');
 popintro.container.setAttribute('id', 'popintro-container');
 document.body.appendChild(popintro.container);
-popintro.container.innerHTML = popintroHTML;
+popintro.container.innerHTML = POPINTRO_HTML;
 
 // Intialize
 popintro.video = document.getElementById('popintro-video');
