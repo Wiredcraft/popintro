@@ -1,0 +1,179 @@
+@import 'bourbon';
+
+$blue: #0074D9;
+
+#popintro-container {
+  bottom: 20px;
+  left: 20px;
+  position: fixed;
+  z-index: 9999;
+  &.popintro-status-stopped {
+    #popintro-mask {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    #popintro-action {
+      opacity: 1;
+    }
+  }
+  &.popintro-status-closed {
+    #popintro-wrapper {
+      height: 60px;
+      width: 60px;
+      &:hover {
+        #popintro-message {
+          img {
+            opacity: 1;
+          }
+        }
+        #popintro-mask {
+          background: rgba(0, 0, 0, 0.6);
+        }
+      }
+    }
+    #popintro-message {
+      left: 50%;
+      top: 50%;
+      @include transform(translate(-50%, -50%));
+      img {
+        opacity: 0.6;
+      }
+    }
+    #popintro-action,
+    #popintro-close {
+      display: none;
+    }
+    #popintro-mask {
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+  * {
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+  }
+  #popintro-wrapper {
+    background: #111;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    display: block;
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+    width: 240px;
+    @include transition-property(height, width);
+    @include transition-duration(0.2s);
+    &:hover {
+      #popintro-message {
+        span {
+          opacity: 1;
+        }
+      }
+      #popintro-action {
+        opacity: 1;
+      }
+    }
+  }
+  #popintro-message {
+    cursor: pointer;
+    font-size: 14px;
+    left: 15px;
+    position: absolute;
+    top: 12px;
+    @include transition-property(opacity);
+    @include transition-duration(0.2s);
+    span {
+      margin-left: 8px;
+      opacity: 0;
+      @include transition-property(opacity);
+      @include transition-duration(0.2s);
+    }
+  }
+  #popintro-close {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+  }
+  video {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+  }
+  #popintro-mask {
+    background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.2));
+    border-radius: 5px;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include transition-property(background);
+    @include transition-duration(0.2s);
+    &:before {
+      border-radius: 5px;
+      bottom: 0;
+      content: ' ';
+      display: block;
+      left: 0;
+      background-image: linear-gradient(rgba(0,0,0,.4),transparent 50%);
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  #popintro-action {
+    bottom: 0;
+    opacity: 0.4;
+    padding: 15px 15px 12px;
+    position: absolute;
+    text-align: left;
+    @include transition-property(opacity);
+    @include transition-duration(0.2s);
+    width: 100%;
+    &:hover {
+      opacity: 1;
+    }
+    form {
+      position: relative;
+    }
+    label {
+      color: #FFF;
+      font-size: 12px;
+    }
+    input[type=text],
+    input[type=email] {
+      background: #FFF;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      color: #333;
+      padding: 3px 40px 3px 8px;
+      width: 100%;
+    }
+    input[type=submit] {
+      background: linear-gradient(tint($blue, 10%), $blue);
+      border: 1px solid shade($blue, 10%);
+      border-radius: 2px;
+      bottom: 2px;
+      color: #FFF;
+      font-size: 12px;
+      padding: 1px 8px;
+      position: absolute;
+      right: 2px;
+      &:hover {
+        background: linear-gradient(tint($blue, 20%), tint($blue, 10%));
+      }
+      &:active {
+        background: linear-gradient(shade($blue, 10%), $blue);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.2);
+      }
+    }
+  }
+}

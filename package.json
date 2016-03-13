@@ -1,0 +1,27 @@
+{
+  "name": "PopIntro",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Wiredcraft/popintro.git"
+  },
+  "author": "Ronan Berder",
+  "license": "Private",
+  "bugs": {
+    "url": "https://github.com/Wiredcraft/wiredcraft.github.io/issues"
+  },
+  "homepage": "https://wiredcraft.com/popintro",
+  "dependencies": {
+    "bower": "*",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-minify-css": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "node-bourbon": "*"
+  }
+}
