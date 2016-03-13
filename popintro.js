@@ -8,9 +8,9 @@ var POPINTRO_HTML = '';
     POPINTRO_HTML += '      <source src="'+ POPINTRO_VIDEO +'" type="video/mp4"/>';
     POPINTRO_HTML += '    </video>';
     POPINTRO_HTML += '    <div id="popintro-mask">';
-    POPINTRO_HTML += '      <div id="popintro-message"><img src="'+ POPINTRO_URL +'/popintro/sound-off.svg"><span>Click to unmute</span></div>';
+    POPINTRO_HTML += '      <div id="popintro-message"><img src="'+ POPINTRO_URL +'/images/sound-off.svg"><span>Click to unmute</span></div>';
     POPINTRO_HTML += '    </div>';
-    POPINTRO_HTML += '    <div id="popintro-close"><img src="'+ POPINTRO_URL +'/popintro/close.svg"></div>';
+    POPINTRO_HTML += '    <div id="popintro-close"><img src="'+ POPINTRO_URL +'/images/close.svg"></div>';
     POPINTRO_HTML += '    <div id="popintro-action">';
     POPINTRO_HTML += POPINTRO_ACTION;
     POPINTRO_HTML += '    </div>';
@@ -37,16 +37,16 @@ popintro.setStatus = function (status) {
   switch(popintro.status) {
     case 'default':
     case 'muted':
-      popintro.message.innerHTML = '<img src="'+ POPINTRO_URL +'/popintro/sound-off.svg"><span>Click to unmute</span>';
+      popintro.message.innerHTML = '<img src="'+ POPINTRO_URL +'/images/sound-off.svg"><span>Click to unmute</span>';
       break;
     case 'stopped':
-      popintro.message.innerHTML = '<img src="'+ POPINTRO_URL +'/popintro/replay.svg"><span>Click to replay</span>';
+      popintro.message.innerHTML = '<img src="'+ POPINTRO_URL +'/images/replay.svg"><span>Click to replay</span>';
       break;
     case 'closed':
-      popintro.message.innerHTML = '<img src="'+ POPINTRO_URL +'/popintro/play.svg">';
+      popintro.message.innerHTML = '<img src="'+ POPINTRO_URL +'/images/play.svg">';
       break;
     default:
-      popintro.message.innerHTML = '<img src="'+ POPINTRO_URL +'/popintro/sound-on.svg">';
+      popintro.message.innerHTML = '<img src="'+ POPINTRO_URL +'/images/sound-on.svg">';
       break;
   }
 };
