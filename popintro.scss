@@ -79,6 +79,7 @@ $blue: #0074D9;
     @include transition-duration(0.2s);
     &:hover {
       #popintro-message {
+        opacity: 1;
         span {
           opacity: 1;
         }
@@ -94,16 +95,27 @@ $blue: #0074D9;
       #popintro-action {
         opacity: 1;
       }
+      #popintro-navigation {
+        &.popintro-next,
+        &.popintro-previous {
+          display: block;
+        }
+        &.popintro-next {
+          #popintro-next {
+            display: block;
+          }
+        }
+        &.popintro-previous {
+          #popintro-previous {
+            display: block;
+          }
+        }
+      }
     }
     &.popintro-status-closed {
       height: 60px;
       width: 60px;
       &:hover {
-        #popintro-message {
-          img {
-            opacity: 1;
-          }
-        }
         #popintro-mask {
           background: rgba(0, 0, 0, 0.6);
         }
@@ -112,9 +124,6 @@ $blue: #0074D9;
         left: 50%;
         top: 50%;
         @include transform(translate(-50%, -50%));
-        img {
-          opacity: 0.6;
-        }
       }
       #popintro-action,
       #popintro-close {
@@ -129,6 +138,7 @@ $blue: #0074D9;
     cursor: pointer;
     font-size: 14px;
     left: 15px;
+    opacity: 0.6;
     position: absolute;
     top: 12px;
     @include transition-property(opacity);
@@ -142,9 +152,15 @@ $blue: #0074D9;
   }
   #popintro-close {
     cursor: pointer;
+    opacity: 0.6;
     position: absolute;
     right: 15px;
     top: 12px;
+    @include transition-property(opacity);
+    @include transition-duration(0.2s);
+    &:hover {
+      opacity: 1;
+    }
   }
   video {
     cursor: pointer;
@@ -172,6 +188,31 @@ $blue: #0074D9;
       position: absolute;
       right: 0;
       top: 0;
+    }
+  }
+  #popintro-navigation {
+    display: none;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+    #popintro-next,
+    #popintro-previous {
+      display: none;
+      border-radius: 40px;
+      border: 2px solid #FFF;
+      cursor: pointer;
+      height: 40px;
+      line-height: 1;
+      opacity: 0.6;
+      padding: 7px 0 0;
+      text-align: center;
+      @include transition-property(opacity);
+      @include transition-duration(0.2s);
+      width: 40px;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
   #popintro-action {
@@ -211,7 +252,6 @@ $blue: #0074D9;
       padding: 3px 40px 3px 8px;
       width: 100%;
     }
-    .popintro-next,
     input[type=submit] {
       background: linear-gradient(tint($blue, 10%), $blue);
       border: 1px solid shade($blue, 10%);

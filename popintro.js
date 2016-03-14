@@ -6,6 +6,10 @@ var POPINTRO_HTML = '';
     POPINTRO_HTML += '    </video>';
     POPINTRO_HTML += '    <div id="popintro-mask">';
     POPINTRO_HTML += '      <div id="popintro-message"><img src="'+ POPINTRO_URL +'/images/sound-off.svg"><span>Click to unmute</span></div>';
+    POPINTRO_HTML += '      <div id="popintro-navigation">';
+    POPINTRO_HTML += '        <div id="popintro-previous"><img src="'+ POPINTRO_URL +'/images/back.svg"></div>';
+    POPINTRO_HTML += '        <div id="popintro-next"><img src="'+ POPINTRO_URL +'/images/forward.svg"></div>';
+    POPINTRO_HTML += '      </div>';
     POPINTRO_HTML += '    </div>';
     POPINTRO_HTML += '    <div id="popintro-close"><img src="'+ POPINTRO_URL +'/images/close.svg"></div>';
     POPINTRO_HTML += '    <div id="popintro-action"></div>';
@@ -28,9 +32,9 @@ popintro.message = document.getElementById('popintro-message');
 popintro.close = document.getElementById('popintro-close');
 popintro.action = document.getElementById('popintro-action');
 popintro.status = '';
-popintro.nextButton = document.createElement('button');
-popintro.nextButton.className = 'popintro-next';
-popintro.nextButton.innerHTML = 'Next';
+popintro.navigation = document.getElementById('popintro-navigation');
+popintro.previous = document.getElementById('popintro-previous');
+popintro.next = document.getElementById('popintro-next');
 
 // Track status of the widget
 popintro.setStatus = function (status) {
@@ -69,7 +73,12 @@ popintro.init = function () {
     popintro.action.innerHTML = step.action;
   }
   else {
-    popintro.action.appendChild(popintro.nextButton);
+    popintro.action.innerHTML = '';
+  }
+  if (POPINTRO_STEPS.length > 1) {
+    popintro.navigation.className = '';
+    if (POPINTRO_STEP != 0) popintro.navigation.className = 'popintro-previous';
+    if (POPINTRO_STEP + 1 != POPINTRO_STEPS.length) popintro.navigation.className = ' popintro-next';
   }
 }
 
@@ -81,8 +90,13 @@ popintro.close.onclick = function (e) {
   popintro.setStatus('closed');
 };
 
-popintro.nextButton.onclick = function (e) {
+popintro.next.onclick = function (e) {
   POPINTRO_STEP++;
+  popintro.init();
+}
+
+popintro.previous.onclick = function (e) {
+  POPINTRO_STEP--;
   popintro.init();
 }
 
