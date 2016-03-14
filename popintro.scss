@@ -95,6 +95,9 @@ $blue: #0074D9;
       #popintro-action {
         opacity: 1;
       }
+    }
+    &.popintro-status-stopped,
+    &.popintro-status-muted {
       #popintro-navigation {
         &.popintro-next,
         &.popintro-previous {
