@@ -102,12 +102,12 @@ $blue: #0074D9;
         }
         &.popintro-next {
           #popintro-next {
-            display: block;
+            display: inline-block;
           }
         }
         &.popintro-previous {
           #popintro-previous {
-            display: block;
+            display: inline-block;
           }
         }
       }
@@ -204,6 +204,7 @@ $blue: #0074D9;
       cursor: pointer;
       height: 40px;
       line-height: 1;
+      margin: 0 5px;
       opacity: 0.6;
       padding: 7px 0 0;
       text-align: center;

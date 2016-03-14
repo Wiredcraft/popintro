@@ -77,8 +77,8 @@ popintro.init = function () {
   }
   if (POPINTRO_STEPS.length > 1) {
     popintro.navigation.className = '';
-    if (POPINTRO_STEP != 0) popintro.navigation.className = 'popintro-previous';
-    if (POPINTRO_STEP + 1 != POPINTRO_STEPS.length) popintro.navigation.className = ' popintro-next';
+    if (POPINTRO_STEP != 0) popintro.navigation.className += 'popintro-previous';
+    if (POPINTRO_STEP + 1 != POPINTRO_STEPS.length) popintro.navigation.className += ' popintro-next';
   }
 }
 
